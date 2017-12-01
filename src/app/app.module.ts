@@ -14,6 +14,9 @@ import { SignInDialogComponent } from './sign-in-dialog/sign-in-dialog.component
 import { SearchComponent } from './search/search.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { MatTabsModule } from '@angular/material/tabs';
+import { DesignComponent } from './design/design.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     UpperNavComponent,
     SignInDialogComponent,
     SearchComponent,
+    DesignComponent,
   ],
   entryComponents : [
     SignInDialogComponent
@@ -35,7 +39,9 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     MatDialogModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatTabsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
