@@ -1,0 +1,9 @@
+nav{
+  background-color: gold;
+}
+span#signup:hover, span#signin:hover{
+  color:white;
+}
+span#signup {
+  margin-right: 20px;
+}

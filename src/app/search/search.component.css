@@ -1,0 +1,11 @@
+
+div#search{
+  text-align: center;
+  margin: 50px 0 50px 0;
+}
+
+.search-full-width {
+  width: 50%;
+  border-radius: 10px;
+  border: 1px black solid;
+}

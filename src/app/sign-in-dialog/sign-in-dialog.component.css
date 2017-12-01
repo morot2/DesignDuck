@@ -1,0 +1,9 @@
+*{
+  width: 100%;
+  text-align: center;
+}
+button{
+  position:absolute;
+  width: 100px;
+  left: 45%;
+}
