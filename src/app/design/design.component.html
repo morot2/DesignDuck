@@ -1,22 +1,24 @@
-<mat-grid-list cols="4" rowHeight="3:4">
-  <mat-grid-tile *ngFor="let design of designs">
-    <mat-card class="design-card">
-      <mat-card-header>
-        <div mat-card-avatar class="design-head"></div>
-        <mat-card-title> {{design.name}} </mat-card-title>
-        <mat-card-subtitle> {{design.subject}} </mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image src="../../assets/image/duck.jpg" alt="Designer">
-      <mat-card-content>
-        <p>
-          디자인 다판다.<br>
-          선제시 아니면 죄송
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button> 관심 </button>
-        <button mat-button> 구매하기 </button>
-      </mat-card-actions>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="container">
+  <mat-grid-list cols="5" rowHeight="4:7">
+    <mat-grid-tile *ngFor="let design of designs">
+      <mat-card class="design-card">
+        <mat-card-header>
+          <img mat-card-avatar class="design-head" src="{{design.profileImageUrl}}">
+          <mat-card-title> {{design.name}} </mat-card-title>
+          <mat-card-subtitle> {{design.subject}} </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{design.designImageUrl}}" alt="Designer">
+        <mat-card-content>
+          <p>
+            디자인 다판다.<br>
+            선제시 아니면 죄송
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button> 관심 </button>
+          <button mat-button> 구매하기 </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

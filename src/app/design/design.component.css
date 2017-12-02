@@ -1,7 +1,16 @@
 .design-card {
   width: 200px;
 }
+/*
 .design-head {
   background-image: url('../../assets/image/man.png');
   background-size: cover;
+}
+*/
+.container {
+  padding : 20px;
+}
+
+img:hover{
+  opacity: 0.5;
 }

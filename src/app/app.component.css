@@ -5,3 +5,6 @@
 .tab-content{
   padding: 20px;
 }
+.mat-tab-labels{
+  justify-content: center; /* align items in Main Axis */
+}
