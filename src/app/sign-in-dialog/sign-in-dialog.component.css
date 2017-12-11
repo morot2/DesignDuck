@@ -5,5 +5,13 @@
 button{
   position:absolute;
   width: 100px;
-  left: 45%;
+  height: 40px;
+  left: 47%;
+  background-color:gold;
+  font-size: 12px;
+  font-color:black;
+}
+.information{
+  margin:0px 120px;
+  width:50%;
 }

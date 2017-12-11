@@ -1,7 +1,8 @@
 
 <app-upper-nav></app-upper-nav>
+<app-banner></app-banner>
 <app-search></app-search>
-<mat-tab-group class="tap-group">
+<mat-tab-group id="tab-group" class="tap-group" (scroll)="onScroll($event)">
   <mat-tab label="전체">
     <div class="tab-content">
      <app-design></app-design>

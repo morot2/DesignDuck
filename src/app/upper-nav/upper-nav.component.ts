@@ -9,8 +9,8 @@ import {MatDialog} from "@angular/material";
 })
 export class UpperNavComponent implements OnInit {
 
-  name : string;
-  id : number;
+  id : string;
+  pw : string;
 
   constructor(public dialog : MatDialog) { }
 
@@ -18,12 +18,12 @@ export class UpperNavComponent implements OnInit {
     let dialogRef = this.dialog.open(SignInDialogComponent, {
       height: '300px',
       width: '600px',
-      data: { name: this.name, id: this.id }
+      data: { id: this.id, pw: this.pw }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.name = result;
+      this.id = result;
     });
   }
 

@@ -17,6 +17,9 @@ import { FormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { DesignComponent } from './design/design.component';
 import { MatCardModule } from '@angular/material/card';
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
+import { BannerComponent } from './banner/banner.component';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +28,7 @@ import { MatCardModule } from '@angular/material/card';
     SignInDialogComponent,
     SearchComponent,
     DesignComponent,
+    BannerComponent,
   ],
   entryComponents : [
     SignInDialogComponent
@@ -41,7 +45,8 @@ import { MatCardModule } from '@angular/material/card';
     MatInputModule,
     FormsModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

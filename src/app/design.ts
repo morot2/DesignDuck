@@ -1,5 +1,5 @@
 export class Design{
-  name : string;
+  nickName : string;
   subject : string;
   profileImageUrl : string;
   designImageUrl : string;

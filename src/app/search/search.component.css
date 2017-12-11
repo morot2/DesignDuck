@@ -5,6 +5,7 @@ div#search{
 }
 
 .search-full-width {
+  padding : 0 15px;
   width: 50%;
   border-radius: 10px;
   border: 1px black solid;
