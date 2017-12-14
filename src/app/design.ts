@@ -3,4 +3,5 @@ export class Design{
   subject : string;
   profileImageUrl : string;
   designImageUrl : string;
+  description:string;
 }

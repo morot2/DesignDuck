@@ -19,8 +19,10 @@ export class DesignComponent implements OnInit {
   }
 
   addItems(idx){
-    for(let i=idx; i<idx+10; i++){
-      this.designs.push(this.fullDesigns.pop());
+    if(idx+10 <= this.fullDesigns.length){
+      for(let i=idx; i<idx+10; i++){
+        this.designs.push(this.fullDesigns.pop());
+      }
     }
     this.idx = idx + 10;
   }
