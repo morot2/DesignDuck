@@ -20,6 +20,7 @@ import { MatCardModule } from '@angular/material/card';
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 import { BannerComponent } from './banner/banner.component';
 import { FacebookModule } from 'ngx-facebook';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { FacebookModule } from 'ngx-facebook';
     SearchComponent,
     DesignComponent,
     BannerComponent,
+    FooterComponent,
   ],
   entryComponents : [
     SignInDialogComponent
