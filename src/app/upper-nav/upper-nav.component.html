@@ -3,14 +3,34 @@
     <mat-grid-tile [colspan]="1">
       <h1>Design Duck</h1>
     </mat-grid-tile>
+
     <mat-grid-tile [colspan]="2">
-      <span *ngIf="!id">다~ 디자인덕이지!</span>
-      <span *ngIf="id">{{id}}님 환영합니다</span>
+
+      <!-- 페이스북 로그인 전 -->
+      <span id="facebookLogin" *ngIf="!id">
+        <span>Login with </span>
+        <button (click)="login()" class="btn btn-lg btn-primary btn-block">
+          Facebook
+        </button>
+      </span>
+
+      <!-- 페이스북 로그인 후 -->
+      <span *ngIf="fbLoginStatus && !id">
+        다~ 디자인 덕이지
+      </span>
+
+      <!-- 일반 로그인 했을때 -->
+      <span id="welcomeMessage" *ngIf="!fbLoginStatus && id">
+        <span >{{id}}님 환영합니다</span>
+      </span>
     </mat-grid-tile>
+
     <mat-grid-tile [colspan]="1">
       <span *ngIf="!id" id="signup"> 회원가입 </span>
       <span *ngIf="!id" id="signin" (click)="openSigninDialog()"> 로그인 </span>
       <span *ngIf="id" id="signout" (click)="openSigninDialog()"> 로그아웃 </span>
     </mat-grid-tile>
   </mat-grid-list>
+
+</nav>
 

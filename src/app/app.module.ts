@@ -19,6 +19,7 @@ import { DesignComponent } from './design/design.component';
 import { MatCardModule } from '@angular/material/card';
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 import { BannerComponent } from './banner/banner.component';
+import { FacebookModule } from 'ngx-facebook';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { BannerComponent } from './banner/banner.component';
     FormsModule,
     MatTabsModule,
     MatCardModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    FacebookModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
