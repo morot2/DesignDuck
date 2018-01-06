@@ -1,21 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { DESIGNS } from "../designs";
 import { Design} from "../design";
+import { MatchMediaService} from "../matchMedia.service";
 
 @Component({
   selector: 'app-design',
   templateUrl: './design.component.html',
-  styleUrls: ['./design.component.css']
+  styleUrls: ['./design.component.css'],
+  providers: [ MatchMediaService ],
+
 })
 export class DesignComponent implements OnInit {
 
   designs : Design[] = new Array();
   fullDesigns = DESIGNS;
 
+  IsMobile: Boolean = false;
+  IsDesktop: Boolean = false;
+
   idx : number = 0;
 
-  constructor() {
+  constructor( private matchMediaService: MatchMediaService ) {
+
     this.addItems(this.idx);
+    this.IsMobile = (this.matchMediaService.IsPhone() || this.matchMediaService.IsTablet());
+    this.IsDesktop = (this.matchMediaService.IsDesktop());
   }
 
   addItems(idx){

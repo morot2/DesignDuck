@@ -1,25 +1,61 @@
-<div class="container">
-  <mat-grid-list cols="5" rowHeight="3:5"
-    infinite-scroll
-    [infiniteScrollDistance]="1.5" [infiniteScrollThrottle]="300" (scrolled)="onScroll()">
-    <mat-grid-tile *ngFor="let design of designs">
-      <mat-card class="design-card">
-        <mat-card-header>
-          <img mat-card-avatar class="design-head" src="{{design.profileImageUrl}}">
-          <mat-card-title> {{design.subject}} </mat-card-title>
-          <mat-card-subtitle> {{design.nickName}} </mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="{{design.designImageUrl}}" alt="Designer">
-        <mat-card-content>
-          <p>
-           {{design.description}}
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button (click)="putOnBasket()"> 관심 </button>
-          <button mat-button (click)="buyDesign()"> 구매하기 </button>
-        </mat-card-actions>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+<div *ngIf="IsMobile">
+  <div class="dd-scroll-page">
+
+    <mat-grid-list cols="2" rowHeight="3:5"
+                   infiniteScroll
+                   [infiniteScrollDistance]="2"
+                   [infiniteScrollThrottle]="300"
+                   (scrolled)="onScroll()">
+
+      <mat-grid-tile *ngFor="let design of designs">
+        <mat-card class="mat-card">
+          <img src="{{design.designImageUrl}}" class="inline-block" style="width:100%;">
+          <!--
+                  <a [routerLink]="['/designDetail', item.projectId]" routerLinkActive="active">
+          -->
+          <span></span>
+
+          <mat-card-title>{{design.subject}}</mat-card-title>
+          <br>
+          <mat-card-subtitle class="subtitle">
+            <img mat-card-avatar src="{{design.profileImageUrl}}">
+            {{design.nickName}}
+          </mat-card-subtitle>
+          <!--
+                  </a>
+          -->
+        </mat-card>
+
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+
+<div *ngIf="!IsMobile">
+  <div class="container">
+    <mat-grid-list cols="5" rowHeight="3:5"
+                   infinite-scroll
+                   [infiniteScrollDistance]="1.5" [infiniteScrollThrottle]="300" (scrolled)="onScroll()">
+      <mat-grid-tile *ngFor="let design of designs">
+        <mat-card class="design-card">
+          <mat-card-header>
+            <img mat-card-avatar class="design-head" src="{{design.profileImageUrl}}">
+            <mat-card-title> {{design.subject}}</mat-card-title>
+            <mat-card-subtitle> {{design.nickName}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="{{design.designImageUrl}}" alt="Designer">
+          <mat-card-content>
+            <p>
+              {{design.description}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button (click)="putOnBasket()"> 관심</button>
+            <button mat-button (click)="buyDesign()"> 구매하기</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
 </div>

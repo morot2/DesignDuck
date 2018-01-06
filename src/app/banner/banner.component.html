@@ -1,2 +1,5 @@
 
-<img src="../../assets/image/banner2.png">
+<img *ngIf="!IsMobile" src="../../assets/image/banner2.png">
+<div *ngIf="IsMobile" class="dd-banner">
+  <span class="dd-vertical-center">디자인 덕에서 경력같은 신입을 모집합니다.</span>
+</div>

@@ -14,3 +14,52 @@
 img:hover{
   opacity: 0.5;
 }
+.demo-tab-group {
+  border: 1px solid #e8e8e8;
+}
+
+.demo-tab-content {
+  padding: 16px;
+}
+.dd-scroll-page{
+  max-height:100%; overflow-y:scroll;
+}
+.dd-banner{
+  height:100px;
+  margin: auto;
+  background-color: forestgreen;
+  text-align: center;
+}
+.dd-vertical-center{
+  vertical-align: middle;
+  margin: auto;
+  padding: 10px;
+}
+.dd-design-list{
+  position:relative;
+  width:50%;
+  float: left;
+
+
+}/*
+.mat-card{
+  margin: auto;
+  !*  margin-left:5px;
+    margin-right:5px;*!
+  width:95%;
+  padding:3px;
+  margin-bottom:20px;
+
+}
+.mat-card-image{
+  margin:auto;
+  margin-top:0px;
+  position:relative;
+}
+.mat-card-title{
+  margin:auto;
+}
+.subtitle{
+  margin:5px;
+}
+*/
