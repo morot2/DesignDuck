@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import {DesignDetailComponent} from "./design-detail/design-detail.component";
+import {MainComponent} from "./main/main.component";
 
 const routes: Routes = [
+  { path:'', component: MainComponent},
+  { path:'detail', component: DesignDetailComponent }
 ];
 
 @NgModule({

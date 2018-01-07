@@ -48,6 +48,7 @@ export class UpperNavComponent implements OnInit {
     this.fb.login()
       .then((res: LoginResponse) => {
         console.log('Logged in', res);
+        this.fbLoginStatus = true;
       })
       .catch(this.handleError);
   }
@@ -80,6 +81,13 @@ export class UpperNavComponent implements OnInit {
       .catch(console.error.bind(console));
   }
 
+  getProfile() {
+    this.fb.api('/me')
+      .then((res: any) => {
+        console.log('Got the users profile', res);
+      })
+      .catch(this.handleError);
+  }
 
   /**
    * This is a convenience method for the sake of this example project.

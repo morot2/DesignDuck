@@ -22,6 +22,9 @@ import { BannerComponent } from './banner/banner.component';
 import { FacebookModule } from 'ngx-facebook';
 import { FooterComponent } from './footer/footer.component';
 import {MatButtonModule} from "@angular/material";
+import { DesignDetailComponent } from './design-detail/design-detail.component';
+import { MainComponent } from './main/main.component';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +35,8 @@ import {MatButtonModule} from "@angular/material";
     DesignComponent,
     BannerComponent,
     FooterComponent,
+    DesignDetailComponent,
+    MainComponent,
   ],
   entryComponents : [
     SignInDialogComponent
