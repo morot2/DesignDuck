@@ -21,3 +21,19 @@ span#signup {
   border-radius: 5px;
   text-align: center;
 }
+.example-fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.demo-tab-content {
+  padding: 16px;
+}
+.dd-title-center {
+  vertical-align: middle;
+  text-align: center;
+  margin: auto;
+  width: 70%;
+}
+.dd-search-button {
+  float:right;
+}

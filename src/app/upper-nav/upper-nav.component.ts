@@ -2,24 +2,30 @@ import {Component, OnInit} from '@angular/core';
 import {SignInDialogComponent} from "../sign-in-dialog/sign-in-dialog.component";
 import {MatDialog} from "@angular/material";
 import { FacebookService, LoginResponse, LoginOptions, UIResponse, UIParams, FBVideoComponent } from 'ngx-facebook';
+import {MatchMediaService} from "../matchMedia.service";
 
 @Component({
   selector: 'app-upper-nav',
   templateUrl: './upper-nav.component.html',
-  styleUrls: ['./upper-nav.component.css']
+  styleUrls: ['./upper-nav.component.css'],
+  providers: [ MatchMediaService ],
+
 })
 export class UpperNavComponent implements OnInit {
 
-  id : string;
-  pw : string;
-  fbLoginStatus : boolean = false;
+  id: string;
+  pw: string;
+  fbLoginStatus: Boolean = false;
+  IsMobile: Boolean = false;
+  IsDesktop: Boolean = false;
 
-
-  constructor(public dialog : MatDialog, private fb: FacebookService) {
+  constructor(public dialog : MatDialog, private fb: FacebookService, private matchMediaService: MatchMediaService ) {
     fb.init({
       appId: '541166612898495',
       version: 'v2.9'
     });
+    this.IsMobile = (this.matchMediaService.IsPhone() || this.matchMediaService.IsTablet());
+    this.IsDesktop = (this.matchMediaService.IsDesktop());
   }
 
   openSigninDialog(): void {

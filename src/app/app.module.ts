@@ -17,11 +17,11 @@ import { FormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { DesignComponent } from './design/design.component';
 import { MatCardModule } from '@angular/material/card';
-import { InfiniteScrollModule } from 'angular2-infinite-scroll';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { BannerComponent } from './banner/banner.component';
 import { FacebookModule } from 'ngx-facebook';
 import { FooterComponent } from './footer/footer.component';
-
+import {MatButtonModule} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -41,6 +41,7 @@ import { FooterComponent } from './footer/footer.component';
     MatGridListModule,
     MatToolbarModule,
     MatMenuModule,
+    MatButtonModule,
     MatIconModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -50,7 +51,7 @@ import { FooterComponent } from './footer/footer.component';
     MatTabsModule,
     MatCardModule,
     InfiniteScrollModule,
-    FacebookModule.forRoot()
+    FacebookModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
