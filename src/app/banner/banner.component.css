@@ -3,9 +3,9 @@ img {
   position: static;
   overflow: hidden;
 }
-.dd-banner{
-  height:100px;
+.banner{
   margin: auto;
+  margin-top : 100px;
   background-color: forestgreen;
   text-align: center;
 }

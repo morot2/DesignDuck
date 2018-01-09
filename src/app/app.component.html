@@ -1,5 +1,36 @@
 <app-upper-nav></app-upper-nav>
-<div class="container">
-  <router-outlet></router-outlet>
-  <app-footer></app-footer>
-</div>
+<app-banner></app-banner>
+<app-search></app-search>
+<mat-tab-group id="tab-group" class="tap-group" (scroll)="onScroll($event)">
+  <mat-tab label="전체">
+    <div class="tab-content">
+     <app-design></app-design>
+    </div>
+  </mat-tab>
+  <mat-tab label="일러스트레이션">
+    <div class="tab-content">
+      일러일러
+    </div>
+  </mat-tab>
+  <mat-tab label="UI/UX">
+    <div class="tab-content">
+      유아이유아이
+    </div>
+  </mat-tab>
+  <mat-tab label="그래픽디자인">
+    <div class="tab-content">
+      그디그디
+    </div>
+  </mat-tab>
+  <mat-tab label="공예">
+    <div class="tab-content">
+      공예공예
+    </div>
+  </mat-tab>
+  <mat-tab label="타이포그래피">
+    <div class="tab-content">
+      타이포타이포
+    </div>
+  </mat-tab>
+</mat-tab-group>
+<app-footer></app-footer>

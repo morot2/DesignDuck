@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DESIGNS } from "../designs";
 import { Design} from "../design";
 import { MatchMediaService} from "../matchMedia.service";
+import {MatDialog} from "@angular/material";
+import {DesignDetailComponent} from "../design-detail/design-detail.component";
 
 @Component({
   selector: 'app-design',
@@ -20,7 +22,7 @@ export class DesignComponent implements OnInit {
 
   idx : number = 0;
 
-  constructor( private matchMediaService: MatchMediaService ) {
+  constructor( public dialog : MatDialog, private matchMediaService: MatchMediaService ) {
 
     this.addItems(this.idx);
     this.IsMobile = (this.matchMediaService.IsPhone() || this.matchMediaService.IsTablet());
@@ -34,6 +36,17 @@ export class DesignComponent implements OnInit {
       }
     }
     this.idx = idx + 10;
+  }
+
+  openDesignDetailDialog(): void {
+    let dialogRef = this.dialog.open(DesignDetailComponent, {
+      height: '90%',
+      width: '100%'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
   putOnBasket(){

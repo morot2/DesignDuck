@@ -7,8 +7,7 @@
     <mat-grid-tile [colspan]="2">
 
       <!-- 페이스북 로그인 전 -->
-      <span id="faceboo
-      kLogin" *ngIf="!id && !fbLoginStatus">
+      <span id="facebookLogin" *ngIf="!id && !fbLoginStatus">
         <span>Login with </span>
         <button (click)="loginWithOptions()" class="btn btn-lg btn-primary btn-block">
           Facebook
@@ -24,6 +23,7 @@
       <span id="welcomeMessage" *ngIf="!fbLoginStatus && id">
         <span >{{id}}님 환영합니다</span>
       </span>
+
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="1">
@@ -32,19 +32,20 @@
       <span *ngIf="id || fbLoginStatus" id="signout" (click)="openSigninDialog()"> 로그아웃 </span>
     </mat-grid-tile>
   </mat-grid-list>
-
 </nav>
+
+
 <mat-toolbar *ngIf="IsMobile" style="background-color: gold; left:0;">
   <button mat-icon-button [matMenuTriggerFor]="menu" class="">
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu" class="dd-title-center">
     <button mat-menu-item>
-      <span *ngIf="!id" id="signin" (click)="openDialog()"> 로그인 </span>
-      <span *ngIf="id" id="signout" (click)="openSigninDialog()"> 로그아웃 </span>
+      <span *ngIf="!id" id="m_signin" (click)="openSigninDialog()"> 로그인 </span>
+      <span *ngIf="id" id="m_signout" (click)="openSigninDialog()"> 로그아웃 </span>
     </button>
     <button mat-menu-item disabled>
-      <span *ngIf="!id" id="signup"> 회원가입 </span>
+      <span *ngIf="!id" id="m_signup"> 회원가입 </span>
     </button>
   </mat-menu>
 

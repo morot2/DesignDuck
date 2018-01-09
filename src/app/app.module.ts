@@ -39,7 +39,8 @@ import { MainComponent } from './main/main.component';
     MainComponent,
   ],
   entryComponents : [
-    SignInDialogComponent
+    SignInDialogComponent,
+    DesignDetailComponent
   ],
   imports: [
     BrowserModule,

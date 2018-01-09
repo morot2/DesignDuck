@@ -9,15 +9,13 @@
 
       <mat-grid-tile *ngFor="let design of designs">
         <mat-card class="mat-card">
-          <img src="{{design.designImageUrl}}" class="inline-block" style="width:100%;">
-          <a [routerLink]="['/designDetail']" routerLinkActive="active">
+          <img src="{{design.designImageUrl}}" class="inline-block" style="width:100%;" (click)="openDesignDetailDialog()">
           <mat-card-title>{{design.subject}}</mat-card-title>
           <br>
           <mat-card-subtitle class="subtitle">
             <img mat-card-avatar src="{{design.profileImageUrl}}">
             {{design.nickName}}
           </mat-card-subtitle>
-          </a>
         </mat-card>
 
       </mat-grid-tile>
@@ -37,9 +35,7 @@
             <mat-card-title> {{design.subject}}</mat-card-title>
             <mat-card-subtitle> {{design.nickName}}</mat-card-subtitle>
           </mat-card-header>
-          <a [routerLink]="['/designDetail']" routerLinkActive="active">
-            <img mat-card-image src="{{design.designImageUrl}}" alt="Designer">
-          </a>
+            <img mat-card-image src="{{design.designImageUrl}}" alt="Designer" (click)="openDesignDetailDialog()">
           <mat-card-content>
             <p>
               {{design.description}}
