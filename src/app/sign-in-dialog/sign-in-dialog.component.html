@@ -1,33 +1,27 @@
 <p>
   환영합니다
 </p>
-<form class="information" name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+<form class="information" name="form" (ngSubmit)="f.form.valid && login()" (keydown)="submitThis($event)" #f="ngForm" novalidate>
   <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
 
       <label for="userId">Username</label>
       <input type="text" class="form-control" name="userId" [(ngModel)]="model.userId" #username="ngModel" required/>
-    <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+    <div *ngIf="f.submitted && !username.valid" class="search-full-width">아이디를 입력하세요</div>
   </div>
   <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
 
       <label for="password">Password</label>
       <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel"
              required/>
-    <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+    <div *ngIf="f.submitted && !password.valid" class="search-full-width">비밀번호를 입력하세요</div>
   </div>
   <div class="form-group">
-    <button [disabled]="loading" class="btn btn-primary">Login</button>
+    <button [disabled]="loading" class="btn btn-primary">로그인</button>
+  </div>
+  <div class="form-group">
     <img *ngIf="loading"
-         src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+         src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+    style="width:80px;"/>
   </div>
   <div *ngIf="error" class="alert alert-danger">{{error}}</div>
 </form>
-<!--<form class="information" (keydown)="submitThis($event)">
-  <mat-form-field class="search-full-width">
-    <input matInput placeholder="아이디를 입력하세요" name="id" [(ngModel)]="data.id">
-  </mat-form-field>
-  <mat-form-field class="search-full-width">
-    <input type="password" matInput placeholder="비밀번호를 입력하세요" name="password" [(ngModel)]="data.pw">
-  </mat-form-field>
-</form>
-<button (click)="closeDialog()">로그인</button>-->

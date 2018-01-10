@@ -3,13 +3,13 @@
   text-align: center;
 }
 button{
-  position:absolute;
+
   width: 100px;
   height: 40px;
-  left: 47%;
   background-color:gold;
   font-size: 12px;
   font-color:black;
+  padding: 5px;
 }
 .information{
   margin:0px 120px;

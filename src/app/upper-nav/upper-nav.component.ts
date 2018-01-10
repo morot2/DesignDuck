@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {SignInDialogComponent} from "../sign-in-dialog/sign-in-dialog.component";
-import {MatDialog} from "@angular/material";
+import {SignInDialogComponent} from '../sign-in-dialog/sign-in-dialog.component';
+import {MatDialog} from '@angular/material';
 import { FacebookService, LoginResponse, LoginOptions, UIResponse, UIParams, FBVideoComponent } from 'ngx-facebook';
-import {MatchMediaService} from "../matchMedia.service";
+import {MatchMediaService} from '../matchMedia.service';
+import {AuthenticationService} from '../_services/authentication.service';
 
 @Component({
   selector: 'app-upper-nav',
@@ -19,7 +20,8 @@ export class UpperNavComponent implements OnInit {
   IsMobile: Boolean = false;
   IsDesktop: Boolean = false;
 
-  constructor(public dialog : MatDialog, private fb: FacebookService, private matchMediaService: MatchMediaService ) {
+  constructor(public dialog: MatDialog, private fb: FacebookService, private matchMediaService: MatchMediaService,
+              private authenticationService: AuthenticationService ) {
     fb.init({
       appId: '541166612898495',
       version: 'v2.9'
@@ -29,7 +31,7 @@ export class UpperNavComponent implements OnInit {
   }
 
   openSigninDialog(): void {
-    let dialogRef = this.dialog.open(SignInDialogComponent, {
+    const dialogRef = this.dialog.open(SignInDialogComponent, {
       height: '300px',
       width: '600px',
       data: { id: this.id, pw: this.pw }
@@ -53,6 +55,14 @@ export class UpperNavComponent implements OnInit {
       .catch(this.handleError);
   }
 
+  // logout and clear local storage
+  logout() {
+    if ( this.authenticationService.logout() ){
+      this.fbLoginStatus = false;
+      this.id = null;
+    }
+  }
+
   /**
    * Login with additional permissions/options
    */
@@ -68,7 +78,7 @@ export class UpperNavComponent implements OnInit {
       .then((res: LoginResponse) => {
         console.log('Logged in', res);
 
-        if(res.status == "conntected"){
+        if (res.status == 'conntected'){
           this.fbLoginStatus = true;
         }
       })

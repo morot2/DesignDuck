@@ -29,7 +29,7 @@
     <mat-grid-tile [colspan]="1">
       <span *ngIf="!id && !fbLoginStatus" id="signup"> 회원가입 </span>
       <span *ngIf="!id && !fbLoginStatus" id="signin" (click)="openSigninDialog()"> 로그인 </span>
-      <span *ngIf="id || fbLoginStatus" id="signout" (click)="openSigninDialog()"> 로그아웃 </span>
+      <span *ngIf="id || fbLoginStatus" id="signout" (click)="logout()"> 로그아웃 </span>
     </mat-grid-tile>
   </mat-grid-list>
 </nav>

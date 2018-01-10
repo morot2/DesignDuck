@@ -14,7 +14,7 @@ export class AuthenticationService {
   }
 
   login(userId: string, password: string): Observable<boolean> {
-    return this.http.post('/api/authenticate', JSON.stringify({ username: userId, password: password }))
+    return this.http.post('/api/authenticate', JSON.stringify({ userId: userId, password: password }))
       .map((response: Response) => {
         // login successful if there's a jwt token in the response
         let token = response.json() && response.json().token;
@@ -23,7 +23,7 @@ export class AuthenticationService {
           this.token = token;
 
           // store username and jwt token in local storage to keep user logged in between page refreshes
-          localStorage.setItem('currentUser', JSON.stringify({ username: userId, token: token }));
+          localStorage.setItem('currentUser', JSON.stringify({ userId: userId, token: token }));
 
           // return true to indicate successful login
           return true;
@@ -34,9 +34,10 @@ export class AuthenticationService {
       });
   }
 
-  logout(): void {
+  logout(): boolean {
     // clear token remove user from local storage to log user out
     this.token = null;
     localStorage.removeItem('currentUser');
+    return true;
   }
 }
