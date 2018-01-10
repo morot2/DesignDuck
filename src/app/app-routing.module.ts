@@ -5,8 +5,10 @@ import {DesignDetailComponent} from "./design-detail/design-detail.component";
 import {MainComponent} from "./main/main.component";
 
 const routes: Routes = [
+  { path: '**', redirectTo: '' }
 ];
 
+export const routing = RouterModule.forRoot(routes);
 @NgModule({
   imports: [
     CommonModule,

@@ -7,7 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routing } from './app-routing.module';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SignInDialogComponent } from './sign-in-dialog/sign-in-dialog.component';
@@ -24,6 +24,11 @@ import { FooterComponent } from './footer/footer.component';
 import {MatButtonModule} from "@angular/material";
 import { DesignDetailComponent } from './design-detail/design-detail.component';
 import { MainComponent } from './main/main.component';
+import {AuthGuard} from "./_guard/auth.guard";
+import {AuthenticationService} from "./_services/authentication.service";
+import {fakeBackendProvider} from "./_utils/fake-backend";
+import {MockBackend} from "@angular/http/testing";
+import {BaseRequestOptions} from "@angular/http";
 
 
 @NgModule({
@@ -58,8 +63,15 @@ import { MainComponent } from './main/main.component';
     MatCardModule,
     InfiniteScrollModule,
     FacebookModule.forRoot(),
+    routing,
   ],
-  providers: [],
+  providers: [AuthGuard,
+    AuthenticationService,
+
+    // providers used to create fake backend
+    fakeBackendProvider,
+    MockBackend,
+    BaseRequestOptions],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
