@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-design-detail',
@@ -12,6 +12,13 @@ export class DesignDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+  @HostListener('window:scroll', ['$event'])
+  onScroll(e) {
+    let contentTop = document.getElementById('content').style.top;
+    let contentRight = document.getElementById('content').style.right;
 
+    console.log('hello');
+    console.log(contentTop +' ,' + contentRight);
+  }
 
 }

@@ -1,32 +1,37 @@
 
-<mat-grid-list cols="4">
-  <mat-grid-tile id="design-area" [colspan]="3">
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-    <div>image area</div>
-  </mat-grid-tile>
+<div class="content-wrapper" (scroll)="onScroll($event)">
 
-  <mat-grid-tile id="info-area" [colspan]="1">
-    info area
-  </mat-grid-tile>
-</mat-grid-list>
+  <div id="content">
+    <div>
+      <img src="../../assets/image/duck.jpg">
+    </div>
+
+    <div>
+      <img src="../../assets/image/duck.jpg">
+    </div>
+
+    <div>
+      <img src="../../assets/image/duck.jpg">
+    </div>
+
+    <div>
+      <img src="../../assets/image/duck.jpg">
+    </div>
+  </div>
+
+  <div id="side-bar">
+    <div class="side-box">
+      <h3>이승윤</h3>
+      <h4>UI/UX Designer</h4>
+      <img id="profile" src="../../assets/image/man.png">
+    </div>
+    <div class="side-box">
+      <h3>Lover Duck 2017</h3>
+      <h4>UI/UX | 52 Sold </h4>
+    </div>
+    <div class="side-box">
+      <button>Buy It!</button>
+      <button>Like It!</button>
+    </div>
+  </div>
+</div>
