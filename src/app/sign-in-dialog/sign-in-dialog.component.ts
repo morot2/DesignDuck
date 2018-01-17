@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
-import {AuthenticationService} from "../_services/authentication.service";
-import {Router} from "@angular/router";
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import {AuthenticationService} from '../_services/authentication.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sign-in-dialog',
@@ -31,14 +31,14 @@ export class SignInDialogComponent implements OnInit {
       .subscribe(result => {
         if (result === true) {
           // login successful
-          if(this.valid()) this.dialogRef.close(this.model.userId);
-          else{
-            alert("아이디와 비밀번호를 모두 입력해주세요")
+          if (this.valid()) {this.dialogRef.close(this.model.userId);
+          } else {
+            alert('아이디와 비밀번호를 모두 입력해주세요');
           }
           this.router.navigate(['/']);
         } else {
           // login failed
-          this.error = 'Username or password is incorrect';
+          this.error = '아이디나 비밀번호가 정확하지 않습니다.';
           this.loading = false;
         }
       });
@@ -47,18 +47,18 @@ export class SignInDialogComponent implements OnInit {
 
   }
 
-  valid() : boolean{
-    let id = this.model.userId;
-    let pw = this.model.password;
+  valid(): boolean{
+    const id = this.model.userId;
+    const pw = this.model.password;
 
-    if(id && pw) return true;
+    if (id && pw) return true;
 
     return false;
   }
 
-  submitThis(e){
-    if(e.keyCode==13){
-      this.closeDialog();
+  submitThis(e) {
+    if (e.keyCode === 13) {
+      this.login();
     }
   }
 
