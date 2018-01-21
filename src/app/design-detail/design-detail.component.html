@@ -1,37 +1,52 @@
-
 <div class="content-wrapper" (scroll)="onScroll($event)">
 
-  <div id="content">
-    <div>
-      <img src="../../assets/image/duck.jpg">
-    </div>
+  <mat-grid-list cols="10">
+    <mat-grid-tile [colspan]="7">
+      <div id="content">
+        <div class="img-wrapper">
+          <img src="../../assets/image/duck.jpg">
+        </div>
 
-    <div>
-      <img src="../../assets/image/duck.jpg">
-    </div>
+        <div class="img-wrapper">
+          <img src="../../assets/image/duck.jpg">
+        </div>
 
-    <div>
-      <img src="../../assets/image/duck.jpg">
-    </div>
+        <div class="img-wrapper">
+          <img src="../../assets/image/duck.jpg">
+        </div>
 
-    <div>
-      <img src="../../assets/image/duck.jpg">
-    </div>
-  </div>
+        <div class="img-wrapper">
+          <img src="../../assets/image/duck.jpg">
+        </div>
 
-  <div id="side-bar">
-    <div class="side-box">
-      <h3>이승윤</h3>
-      <h4>UI/UX Designer</h4>
-      <img id="profile" src="../../assets/image/man.png">
-    </div>
-    <div class="side-box">
-      <h3>Lover Duck 2017</h3>
-      <h4>UI/UX | 52 Sold </h4>
-    </div>
-    <div class="side-box">
-      <button>Buy It!</button>
-      <button>Like It!</button>
-    </div>
-  </div>
+        <div class="img-wrapper">
+          <img src="../../assets/image/duck.jpg">
+        </div>
+
+        <div class="img-wrapper">
+          <img src="../../assets/image/duck.jpg">
+        </div>
+
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="3">
+      <div id="side-bar">
+        <div class="side-box">
+          <img id="profile" src="../../assets/image/man.png">
+          <h3>이승윤</h3>
+          <h5>UI/UX</h5>
+          <button id="btn-visit">방문하기</button>
+        </div>
+        <div class="side-box">
+          <h3>Lover Duck 2017</h3>
+          <h4>UI/UX | 52 Sold </h4>
+        </div>
+        <div class="side-box" id="btn-wrapper">
+          <button id="btn-buy">구매하기</button>
+          <button id="btn-like">관심</button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>

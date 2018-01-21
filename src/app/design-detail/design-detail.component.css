@@ -1,40 +1,79 @@
 
-
 .content-wrapper{
-  position : relative;
   height: 100%;
+  position : relative;
+  overflow: auto;
+}
+
+
+mat-grid-list, mat-grid-tile{
+  height: 100%;
+  overflow: auto;
+  padding : 0 !important;
+}
+
+.img-wrapper{
+  margin-top: 15px;
 }
 
 #content{
-  overflow : scroll;
+  text-align: center;
+  overflow: auto;
 }
 
 #side-bar{
-  width: 280px;
-  height: 100%;
-  position : absolute;
-  float : left;
-  overflow: hidden;
-  right: 0;
-  top : 0;
-  z-index: 2;
+  margin-left:5px;
+  position : fixed;
+  width: 25%;
+  height: 90%;
   background-color: #fafafa;
   border-left:1px solid #e8e8e8;
 }
 
+#profile{
+  margin : 20px 10px 5px 10px;
+  height: 50px;
+  width: 50px;
+}
+
+#btn-visit{
+  width : 50%;
+  height: 40px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background-color: #fafafa;
+}
+
 .side-box{
   position : relative;
-  height: 100px;
-  vertical-align: middle;
+  height: auto;
   text-align: center;
   border-bottom: 1px solid #e8e8e8;
 }
 
-#profile{
+#btn-wrapper{
+  height: auto;
+  font-size: 24px;
+}
+
+#btn-buy, #btn-like{
   position : absolute;
-  right : 20px;
-  top : 20px;
-  width: 30px;
-  height: 30px;
-  border-radius: 100px;
+  width: 50%;
+  display: inline;
+  top : 0;
+  height: 60px;
+  background-color: #fafafa;
+}
+
+#btn-buy{
+  left : 0;
+}
+
+#btn-like{
+  right : 0;
+}
+
+button:hover{
+  background-color: #99ddff !important;
+  color : white;
 }
