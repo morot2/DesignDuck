@@ -31,6 +31,7 @@ export class UpperNavComponent implements OnInit {
   }
 
   openSigninDialog(): void {
+
     const dialogRef = this.dialog.open(SignInDialogComponent, {
       height: '300px',
       width: '600px',
@@ -41,6 +42,7 @@ export class UpperNavComponent implements OnInit {
       console.log('The dialog was closed');
       this.id = result;
     });
+
   }
 
   /**

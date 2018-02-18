@@ -29,6 +29,8 @@ import {AuthenticationService} from "./_services/authentication.service";
 import {fakeBackendProvider} from "./_utils/fake-backend";
 import {MockBackend} from "@angular/http/testing";
 import {BaseRequestOptions} from "@angular/http";
+import {HttpClientModule} from "@angular/common/http";
+import { MyspaceComponent } from './myspace/myspace.component';
 
 
 @NgModule({
@@ -42,13 +44,15 @@ import {BaseRequestOptions} from "@angular/http";
     FooterComponent,
     DesignDetailComponent,
     MainComponent,
+    MyspaceComponent,
   ],
   entryComponents : [
     SignInDialogComponent,
-    DesignDetailComponent
+    DesignDetailComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     MatGridListModule,
     MatToolbarModule,
     MatMenuModule,
@@ -70,6 +74,7 @@ import {BaseRequestOptions} from "@angular/http";
 
     // providers used to create fake backend
     fakeBackendProvider,
+    HttpClientModule,
     MockBackend,
     BaseRequestOptions],
   bootstrap: [AppComponent]

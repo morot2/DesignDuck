@@ -8,13 +8,13 @@ import {of} from "rxjs/observable/of";
 @Injectable()
 export class RetrieveAllDesignService {
 
-  private url = "http://172.30.1.57:8080/designs?index=";
+  private url:string = "http://18.218.98.36:8080/SinlimCon";
 
   constructor(private http:HttpClient) { }
 
   getDesigns (idx:number): Observable<string> {
     debugger;
-    return this.http.get<string>(this.url + "1");
+    return this.http.get<string>(this.url);
   }
 
   /*

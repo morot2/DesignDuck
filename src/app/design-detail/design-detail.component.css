@@ -1,27 +1,28 @@
 
-.content-wrapper{
+.content-wrapper {
   height: 100%;
   position : relative;
   overflow: auto;
 }
 
-
-mat-grid-list, mat-grid-tile{
+mat-grid-list, mat-grid-tile {
   height: 100%;
   overflow: auto;
   padding : 0 !important;
 }
 
-.img-wrapper{
+.img-wrapper {
   margin-top: 15px;
 }
 
-#content{
+#content {
+  position : absolute;
+  top : 0px;
   text-align: center;
-  overflow: auto;
+  overflow : scroll;
 }
 
-#side-bar{
+#side-bar {
   margin-left:5px;
   position : fixed;
   width: 25%;
@@ -30,13 +31,13 @@ mat-grid-list, mat-grid-tile{
   border-left:1px solid #e8e8e8;
 }
 
-#profile{
+#profile {
   margin : 20px 10px 5px 10px;
   height: 50px;
   width: 50px;
 }
 
-#btn-visit{
+#btn-visit {
   width : 50%;
   height: 40px;
   margin-bottom: 10px;
@@ -44,19 +45,19 @@ mat-grid-list, mat-grid-tile{
   background-color: #fafafa;
 }
 
-.side-box{
+.side-box {
   position : relative;
   height: auto;
   text-align: center;
   border-bottom: 1px solid #e8e8e8;
 }
 
-#btn-wrapper{
+#btn-wrapper {
   height: auto;
   font-size: 24px;
 }
 
-#btn-buy, #btn-like{
+#btn-buy, #btn-like {
   position : absolute;
   width: 50%;
   display: inline;
@@ -65,15 +66,15 @@ mat-grid-list, mat-grid-tile{
   background-color: #fafafa;
 }
 
-#btn-buy{
+#btn-buy {
   left : 0;
 }
 
-#btn-like{
+#btn-like {
   right : 0;
 }
 
-button:hover{
+button:hover {
   background-color: #99ddff !important;
   color : white;
 }

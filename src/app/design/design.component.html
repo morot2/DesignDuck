@@ -1,13 +1,13 @@
 <div *ngIf="IsMobile">
   <div class="dd-scroll-page">
 
-    <mat-grid-list cols="2" rowHeight="3:5"
+    <mat-grid-list cols="5"
                    infiniteScroll
                    [infiniteScrollDistance]="2"
                    [infiniteScrollThrottle]="300"
                    (scrolled)="onScroll()">
 
-      <mat-grid-tile *ngFor="let design of designs">
+      <mat-grid-tile *ngFor="let design of designs" [colspan]="1">
         <mat-card class="mat-card">
           <img src="{{design.designImageUrl}}" class="inline-block" style="width:100%;" (click)="openDesignDetailDialog()">
           <mat-card-title>{{design.subject}}</mat-card-title>
