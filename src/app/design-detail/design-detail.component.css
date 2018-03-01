@@ -52,6 +52,10 @@ mat-grid-list, mat-grid-tile {
   border-bottom: 1px solid #e8e8e8;
 }
 
+.side-box#side-box-1{
+
+}
+
 #btn-wrapper {
   height: auto;
   font-size: 24px;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DESIGNS } from "../designs";
-import { Design} from "../design";
+import { DESIGNS } from "../_models/designs";
+import { Design} from "../_models/design";
 import { MatchMediaService} from "../matchMedia.service";
 import { MatDialog } from "@angular/material";
 import { DesignDetailComponent } from "../design-detail/design-detail.component";

@@ -1,4 +1,4 @@
-import {Design} from "./design";
+import {Design} from "../design";
 
 export const DESIGNS : Design[] = [
   { nickName : "레오나르도 다빈치", subject : "황금오리", profileImageUrl : "../../assets/image/man.png", designImageUrl:"../../assets/image/duck.jpg",description : "얘야 오늘은 오리구이가 먹고싶구나"},
